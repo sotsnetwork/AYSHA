@@ -1,0 +1,7 @@
+{
+  "name": "AYSHA Furniture & Electronics",
+  "description": "A premium digital showroom experience for AYSHA, Kano's finest luxury furniture and electronics curator, featuring AI-powered interior design consultation and AR room visualization.",
+  "requestFramePermissions": [
+    "camera"
+  ]
+}
