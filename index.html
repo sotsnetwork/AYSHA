@@ -35,6 +35,9 @@
         ::-webkit-scrollbar { width: 8px; }
         ::-webkit-scrollbar-track { background: #fdfbf7; }
         ::-webkit-scrollbar-thumb { background: #c6a96c; border-radius: 4px; }
+        /* Hide icon text until Material Symbols font loads */
+        .material-symbols-outlined { opacity: 0; transition: opacity 0.2s ease; }
+        html.icons-loaded .material-symbols-outlined { opacity: 1; }
     </style>
 <script type="importmap">
 {
@@ -49,7 +52,12 @@
 <link rel="stylesheet" href="/index.css">
 </head>
 <body class="bg-background-light text-charcoal">
+    <!-- Preload icon font so it's ready before React renders -->
+    <span class="material-symbols-outlined" style="position:absolute;width:1px;height:1px;margin:-1px;padding:0;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0" aria-hidden="true">arrow_down</span>
     <div id="root"></div>
+    <script>
+        document.fonts.ready.then(function() { document.documentElement.classList.add('icons-loaded'); });
+    </script>
 <script type="module" src="/index.tsx"></script>
 </body>
 </html>
